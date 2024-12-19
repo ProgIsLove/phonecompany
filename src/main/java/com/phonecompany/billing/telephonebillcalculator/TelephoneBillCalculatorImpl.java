@@ -3,6 +3,7 @@ package com.phonecompany.billing.telephonebillcalculator;
 import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -59,8 +60,11 @@ public class TelephoneBillCalculatorImpl implements TelephoneBillCalculator {
     }
 
     private BigDecimal getMinuteRate(LocalDateTime time) {
-        int hour = time.getHour();
-        if (hour >= 8 && hour < 16) {
+        LocalTime startTime = LocalTime.of(8, 0);
+        LocalTime endTime = LocalTime.of(16, 0);
+        LocalTime checkTime = LocalTime.of(time.getHour(), 0);
+
+        if ((checkTime.equals(startTime) || checkTime.isAfter(startTime)) && checkTime.isBefore(endTime)) {
             return BigDecimal.valueOf(1.00);
         } else {
             return BigDecimal.valueOf(0.50);
