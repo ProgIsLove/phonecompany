@@ -1,4 +1,4 @@
-package com.phonecompany.billing;
+package com.phonecompany.billing.telephonebillcalculator;
 
 import java.math.BigDecimal;
 
