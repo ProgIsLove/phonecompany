@@ -18,10 +18,9 @@ The following items should be installed in your system:
     ```
     git clone https://github.com/ProgIsLove/rcrm-integration.git
     ```
-2) Run docker desktop
-3) Open terminal   
+2) Open terminal   
    ```
    ${yourPath}/phonecompany>mvn clean install
    
    ```
-4) Enjoy <3   
+3) Enjoy <3   
